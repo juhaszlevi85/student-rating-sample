@@ -1,0 +1,53 @@
+---
+#########################################################
+# Ingress for Moleculer API Gateway
+#########################################################
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: student-rating-api-ingress
+spec:
+  rules:
+    - host: jl-student-rating.apps.okd.codespring.ro
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: api
+              servicePort: 3000
+
+---
+#########################################################
+# Ingress for Grafana
+#########################################################
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: student-rating-grafana-ingress
+spec:
+  rules:
+    - host: student-rating-grafana.apps.okd.codespring.ro
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: grafana
+              servicePort: 80
+
+---
+#########################################################
+# Ingress for Prometheus
+#########################################################
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: student-rating-prometheus-ingress
+spec:
+  rules:
+    - host: student-rating-prometheus.apps.okd.codespring.ro
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: prometheus
+              servicePort: 9090
