@@ -48,13 +48,26 @@ module.exports = {
 			},
 		},
 
+		hi: {
+			rest: {
+				method: "GET",
+				path: "/hi",
+			},
+			async handler(ctx) {
+				return "Hi Moleculer";
+			},
+		},
+
 		/**
 		 * Welcome, a username
 		 *
 		 * @param {String} name - User name
 		 */
 		welcome: {
-			rest: "/welcome",
+			rest: {
+				method: "GET",
+				path: "/welcome",
+			},
 			params: {
 				name: {
 					type: "string",
