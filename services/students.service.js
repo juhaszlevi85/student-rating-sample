@@ -73,7 +73,11 @@ module.exports = {
 				const score = Math.floor(Math.random() * 10);
 
 				this.logger.info("Get random user: " + student[studentId]);
-				return { name: student[studentId], score };
+				return {
+					name: student[studentId],
+					score,
+					active: true,
+				};
 			},
 		},
 	},
