@@ -1,15 +1,17 @@
 pipeline {
-  agent any
+  agent {
+      label 'student-rating'
+  }
   stages {
     stage('Build') {
       steps {
-        bat "npm run start"
+        bat 'npm run start'
       }
     }
 
     stage('Test') {
       steps {
-        bat "npm test"
+        bat 'npm test'
       }
     }
 
