@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Building..'
+        bat "npm run start"
       }
     }
 
     stage('Test') {
       steps {
-        echo 'Testing..'
+        bat "npm test"
       }
     }
 
