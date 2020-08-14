@@ -58,11 +58,6 @@ module.exports = {
 			params: {
 				name: {
 					type: "string",
-					optional: true,
-				},
-				number: {
-					type: "number",
-					optional: true,
 				},
 			},
 			/** @param {Context} ctx  */
@@ -70,10 +65,6 @@ module.exports = {
 				if (!ctx.params.name) {
 					this.logger.error(
 						"ERROR: You need to pass any string value!"
-					);
-				} else if (!isNaN(ctx.params.number)) {
-					this.logger.warn(
-						"WARN: Please provide some name instead of number!"
 					);
 				} else {
 					this.logger.info(
