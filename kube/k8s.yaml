@@ -68,6 +68,7 @@ spec:
       containers:
         - name: api
           image: docker.io/juhaszlevente/student-rating:v1.3
+          imagePullPolicy: Always
           envFrom:
             - configMapRef:
                 name: common-env
@@ -96,6 +97,7 @@ spec:
       containers:
         - name: greeter
           image: docker.io/juhaszlevente/student-rating:v1.3
+          imagePullPolicy: Always
           envFrom:
             - configMapRef:
                 name: common-env
@@ -124,6 +126,7 @@ spec:
       containers:
         - name: products
           image: docker.io/juhaszlevente/student-rating:v1.3
+          imagePullPolicy: Always
           envFrom:
             - configMapRef:
                 name: common-env
@@ -152,6 +155,7 @@ spec:
       containers:
         - name: students
           image: docker.io/juhaszlevente/student-rating:v1.3
+          imagePullPolicy: Always
           envFrom:
             - configMapRef:
                 name: common-env

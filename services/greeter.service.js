@@ -54,7 +54,7 @@ module.exports = {
 				path: "/hi",
 			},
 			async handler(ctx) {
-				return "Hi Moleculer";
+				return "Hi Moleculer!";
 			},
 		},
 
